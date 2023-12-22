@@ -25,6 +25,8 @@ li {
     list-style: none;
 }
 
+.cursor__pointer {cursor:pointer;}
+
 /* HEADER */
 .header__top {
     letter-spacing: 1px;
@@ -107,6 +109,8 @@ li {
     gap: 3vw;
 
 }
+
+/* .desktop__show a{cursor:pointer;} */
 
 .header__nav > .tablet__show{
     display: none
@@ -407,6 +411,14 @@ li {
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.04);
 }
 
+/* add border for each element in .signup__info*/
+.signup__info *:not(.signup__formcontact){
+    border: dashed 1.5px #FF8302;
+    padding: 10px;
+    border-top-right-radius: 20px 20px;
+    border-bottom-left-radius: 20px 20px;
+}
+
 .signup__content input,
 .signup__content select {
     display: block;
@@ -465,7 +477,7 @@ li {
 
 .signup__info select:first-of-type,
 .signup__info input[name='send-message'] {
-    border-bottom: 1px solid #E6E6E6;
+    /* border-bottom: 1px solid #E6E6E6; */
     width: 100%;
 }
 
