@@ -185,7 +185,7 @@ li {
 /* INTRO */
 .intro {
     background-image: url(../img/Untitled.jpg);
-    height: 1094px;
+    height: fit-content;
     position: relative;
 }
 
@@ -269,12 +269,6 @@ li {
     color: #494949;
 }
 
-.card--1 .intro__icon img {
-    position: absolute;
-    bottom: 0;
-    right: 22px;
-}
-
 .card--1 .intro__ratio img {
     position: absolute;
     top: 0;
@@ -282,6 +276,7 @@ li {
     border-radius: 16px;
     width: 100%;
     object-fit: cover;
+    max-height: 400px;
 }
 
 .card--1 .intro__text {
@@ -313,6 +308,7 @@ li {
     border-radius: 16px;
     width: 100%;
     object-fit: cover;
+    max-height: 400px;
 }
 
 /* GALLERY */
@@ -383,6 +379,7 @@ li {
 /* SIGNUP */
 .signup .container {
     position: relative;
+    
 }
 
 .signup img {
@@ -510,6 +507,7 @@ footer .container {
 .footer__content {
     display: flex;
     justify-content: space-between;
+    
     font-weight: 300;
 }
 
@@ -525,13 +523,19 @@ footer .container {
     margin-bottom: 24px;
 }
 
+.footer__top{
+    margin-right: 40px;
+}
+
 .footer__logo {
     height: 116px;
     width: auto;
+    
 }
 
 .footer__logo img {
-    width: 100%;
+    width: auto;
+    max-width: 290px;
     height: 100%;
 }
 
@@ -556,7 +560,7 @@ footer .container {
 
 .footer__mid {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     width: 25%;
 }
 
@@ -606,8 +610,8 @@ footer .container {
 @media only screen and (max-width: 950px){
     .gallery *,
     .intro__content,
-    .footer__item:first-of-type,
-    .intro__icon,
+    /* .footer__item:first-of-type, */
+    .intro--icon,
     .signup__shadow,
     .carousel__icon,
     .header__nav > .desktop__show
@@ -615,6 +619,9 @@ footer .container {
         display: none;
     }
 
+    .intro{
+        height: 700px;
+    }
     .header__nav > .tablet__show {
         display: flex;
         justify-self: end;
@@ -628,26 +635,44 @@ footer .container {
         /* justify-content: space-around; */
         /* width: max-content; */
         flex-direction: column;
-        align-items: center;
-        justify-self: center;
+        margin-left: 15vw;
+        /* align-items: center; */
+        /* justify-content: center; */
         
     }
+
+    .footer__nav__address, .footer__item:last-of-type, .footer__top{
+        width: 60vw;
+    }
+
+    
     .footer__mid{
         width: fit-content;
-        column-gap: 10vw;
-        margin: 20px;
+        /* align-self: start; */
+
+        /* column-gap: 1vw; */
+        /* margin: 10px 0 10px 50px; */
        
     }
-    .footer__item > .footer__nav ul{
-        width: 200%;
-        margin: auto;
+
+
+    .footer__partner img{
+        transform: scale(0.7);
     }
-     .signup__card{
+    /* .footer__logo{
+        height: auto;
+        width: 40vw;
+    } */
+   
+
+    .signup__card{
         bottom: 10px;
         max-height: 800px;
         left: 50%;
         transform: translateX(-50%);
         width: 70vw;
+        box-shadow: 0 0 5px #FF8302;
+        
     }
     /* fix bug .signup__card */
     .intro__title{
@@ -665,4 +690,43 @@ footer .container {
         flex-direction: column;
     }
     
+}
+/* fix a .signup__card bug */
+@media (max-width:780px) {
+    .intro{
+        height: 900px;
+    }
+}
+
+@media (max-width:600px) {
+    .intro{
+        height: 1100px;
+    }
+}
+
+
+@media only screen and (max-width:430px) {
+    .header__top,
+    .intro,
+    .signup,
+    .carousel
+    {
+        display: none;
+    }
+    
+    .footer__social *{
+        margin-bottom: 20px;
+    }
+    .footer__partner{
+        transform: scale(0.7);
+    }
+    .footer__mid{
+        column-gap: 10px;
+    }
+    .footer__logo img, .footer__logo{
+        width: 70vw;
+        height: auto;
+        transform: translateX(-4%);
+        min-width: 150px;
+    }
 }
