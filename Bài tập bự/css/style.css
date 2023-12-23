@@ -350,7 +350,7 @@ li {
     width: 100%;
     height: 100%;
     position: absolute;
-    line-height: 100px;
+    /* line-height: 100px; */
     top: 0;
     right: 0;
     text-align: center;
@@ -385,7 +385,7 @@ li {
 }
 .gallery__itemcontent p:hover{
     
-    transform: scale(1.4);
+    transform: scale(1.2);
     color: #FF8302;
 }
 
